@@ -64,3 +64,51 @@ html, body {
   margin: 0 auto;
   min-height: 100vh;
 }
+
+/* --- Mobile Responsive Design --- */
+@media (max-width: 768px) {
+  .signature {
+    font-size: 3rem;
+  }
+  
+  .contact-info {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  
+  .contact-link {
+    font-size: 0.75rem;
+  }
+  
+  .separator {
+    font-size: 0.7rem;
+  }
+  
+  #hero {
+    padding: 1.5rem 1rem;
+  }
+  
+  .content {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signature {
+    font-size: 2.5rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .separator {
+    display: none;
+  }
+  
+  .contact-link {
+    font-size: 0.7rem;
+  }
+}

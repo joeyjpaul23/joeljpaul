@@ -1,8 +1,7 @@
 title: Joey Paul
 email: joeyjpaul@tamu.edu
-description: >-
-  Personal website of Joey Paul
-baseurl: "/joeljpaul"
+description: Personal website of Joey Paul
+baseurl: ""
 url: "https://joeyjpaul23.github.io"
 
 # Build settings

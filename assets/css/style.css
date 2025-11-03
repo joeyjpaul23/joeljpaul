@@ -25,8 +25,9 @@ html, body {
 }
 
 .signature {
-  font-family: 'Herr Von Muellerhoff', cursive;
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
   font-size: 5rem;
+  font-weight: lighter;
   color: white;
   margin: 1rem 0;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
@@ -41,7 +42,9 @@ html, body {
 }
 
 .contact-link {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
   font-size: 0.9rem;
+  font-weight: 200;
   color: #cccccc;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -53,6 +56,7 @@ html, body {
 }
 
 .separator {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
   color: #666666;
   font-size: 0.8rem;
 }
@@ -65,6 +69,282 @@ html, body {
   min-height: 100vh;
 }
 
+/* --- About Me Section --- */
+.about-me {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-heading {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.photo-container {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.7;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.who-am-i {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
+  font-size: 2rem;
+  font-weight: lighter;
+  color: white;
+  margin: 0;
+}
+
+.bio-text {
+  font-family: 'Poppins', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin: 0;
+  text-align: left;
+}
+
+.resume-link {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.resume-link:hover {
+  background-color: white;
+  color: #080808;
+}
+
+
+/* --- Projects Section --- */
+.projects {
+  padding: 4rem 2rem 4rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto 0 0;
+}
+
+.projects-heading {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1.50fr 1.50fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1100px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.projects-container > * {
+  width: 100%;
+}
+
+/* Right justify both cards in their columns */
+.projects-container > .flip-card {
+  justify-self: end;
+  margin-left: auto;
+}
+
+/* Flip Card Container */
+.flip-card {
+  perspective: 1000px;
+  perspective-origin: center center;
+  width: 90%;
+  height: 250px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  position: relative;
+  margin: 0;
+  will-change: transform;
+  display: block;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 98%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* When flipped, rotate 180 degrees */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Prevent clicking during animation */
+.flip-card.flipping {
+  pointer-events: none;
+}
+
+/* Both front and back faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+  transform-origin: center center;
+}
+
+/* Front face (default) */
+.flip-card-front {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.flip-card-front:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Back face - already rotated 180 degrees */
+.flip-card-back {
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.flip-hint {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 1rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.project-title {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.flip-card-back .project-title {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.project-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.project-current-status {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+  font-style: italic;
+}
+
+.project-link {
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', 'Copperplate', serif;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: auto;
+}
+
+.project-link:hover {
+  background-color: white;
+  color: #080808;
+}
 /* --- Mobile Responsive Design --- */
 @media (max-width: 768px) {
   .signature {
@@ -91,6 +371,32 @@ html, body {
   
   .content {
     padding: 2rem 1rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr; /* Stack columns on mobile */
+    gap: 2rem;
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+  }
+  
+  .who-am-i {
+    font-size: 1.5rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .flip-card {
+    height: 230px;
+    width: 85%;
+  }
+  
+  .projects-heading {
+    font-size: 2rem;
   }
 }
 

@@ -8,5 +8,39 @@
     }, { threshold: 0.2 });
     
     document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
+
+    // Flip Card Functionality with Multiple Flips Prevention
+    document.addEventListener('DOMContentLoaded', function() {
+        const flipCards = document.querySelectorAll('.flip-card');
+        
+        flipCards.forEach(card => {
+            let isFlipping = false;
+            
+            card.addEventListener('click', function(e) {
+                // Don't flip if clicking on a link
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    return;
+                }
+                
+                // Prevent multiple flips during animation
+                if (isFlipping) {
+                    return;
+                }
+                
+                // Mark as flipping
+                isFlipping = true;
+                this.classList.add('flipping');
+                
+                // Toggle 'flipped' class
+                this.classList.toggle('flipped');
+                
+                // Allow flipping again after animation completes (600ms)
+                setTimeout(() => {
+                    isFlipping = false;
+                    this.classList.remove('flipping');
+                }, 600);
+            });
+        });
+    });
 </script>
     
